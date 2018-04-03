@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		391AFEB120713CED00B5FB7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391AFEB020713CED00B5FB7B /* AppDelegate.swift */; };
-		391AFEB320713CED00B5FB7B /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391AFEB220713CED00B5FB7B /* NotesTableViewController.swift */; };
 		391AFEB620713CED00B5FB7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391AFEB420713CED00B5FB7B /* Main.storyboard */; };
 		391AFEB920713CED00B5FB7B /* MBNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 391AFEB720713CED00B5FB7B /* MBNotes.xcdatamodeld */; };
 		391AFEBB20713CED00B5FB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391AFEBA20713CED00B5FB7B /* Assets.xcassets */; };
@@ -18,12 +17,12 @@
 		3933C89720717CA000E86871 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933C89620717CA000E86871 /* CreateNoteViewController.swift */; };
 		397634EF2071B5C1006BFE6E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397634EE2071B5C0006BFE6E /* Data.swift */; };
 		39B5D51A20721D5B008C81B9 /* DetailNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5D51920721D5B008C81B9 /* DetailNoteViewController.swift */; };
+		39FC1EC52074040B000A218D /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FC1EC42074040B000A218D /* NotesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		391AFEAD20713CED00B5FB7B /* MBNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		391AFEB020713CED00B5FB7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		391AFEB220713CED00B5FB7B /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		391AFEB520713CED00B5FB7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		391AFEB820713CED00B5FB7B /* MBNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MBNotes.xcdatamodel; sourceTree = "<group>"; };
 		391AFEBA20713CED00B5FB7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		3933C89620717CA000E86871 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		397634EE2071B5C0006BFE6E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		39B5D51920721D5B008C81B9 /* DetailNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNoteViewController.swift; sourceTree = "<group>"; };
+		39FC1EC42074040B000A218D /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 			children = (
 				391AFEB020713CED00B5FB7B /* AppDelegate.swift */,
 				39B5D51920721D5B008C81B9 /* DetailNoteViewController.swift */,
-				391AFEB220713CED00B5FB7B /* NotesTableViewController.swift */,
+				39FC1EC42074040B000A218D /* NotesTableViewController.swift */,
 				3933C8902071651C00E86871 /* NoteTableViewCell.swift */,
 				3933C89620717CA000E86871 /* CreateNoteViewController.swift */,
 				3933C8942071737700E86871 /* CoreDataHandler.swift */,
@@ -154,8 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				391AFEB320713CED00B5FB7B /* NotesTableViewController.swift in Sources */,
 				39B5D51A20721D5B008C81B9 /* DetailNoteViewController.swift in Sources */,
+				39FC1EC52074040B000A218D /* NotesTableViewController.swift in Sources */,
 				3933C8952071737700E86871 /* CoreDataHandler.swift in Sources */,
 				397634EF2071B5C1006BFE6E /* Data.swift in Sources */,
 				391AFEB120713CED00B5FB7B /* AppDelegate.swift in Sources */,

@@ -30,6 +30,11 @@ class CreateNoteViewController: UIViewController {
         }
         notes = CoreDataHandler.fetchNotes()
     }
+    
+    @IBAction func closeBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
     
 

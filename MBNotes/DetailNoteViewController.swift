@@ -25,7 +25,7 @@ class DetailNoteViewController: UIViewController {
         noteNameLblDN.text = noteToDetail?.name
         textNoteDN.text = noteToDetail?.text
         creationDateLblDN.text = dateform.string(from: (noteToDetail?.creatingDate)!)
-        editingDateLblDN.text = dateform.string(from: (noteToDetail?.creatingDate)!)
+        editingDateLblDN.text = dateform.string(from: (noteToDetail?.editingDate)!)
         
     }
 
@@ -46,6 +46,7 @@ class DetailNoteViewController: UIViewController {
             } catch {
                 print(error)
             }
+        dismiss(animated: true, completion: nil)
     }
     
 
