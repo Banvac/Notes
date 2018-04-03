@@ -20,7 +20,7 @@ class CreateNoteViewController: UIViewController {
 
     @IBAction func addNoteBtn(_ sender: UIButton) { //добавить экземпляр сущности
         if !(noteNameText.text!.isEmpty) || !(noteText.text!.isEmpty) {
-            if CoreDataHandler.saveObject(name: noteNameText.text!, text: noteText.text, creatingDate: date1 as Date, editingDate: date1 as Date) {
+            if CoreDataHandler.saveObject(name: noteNameText.text!, text: noteText.text, creatingDate: currentDate as Date, editingDate: currentDate as Date) {
             }
             noteNameText.text! = ""
             noteNameText.placeholder = "Note saved"
@@ -28,7 +28,7 @@ class CreateNoteViewController: UIViewController {
         } else {
             noteNameText.placeholder = "Enter note name or text."
         }
-        note = CoreDataHandler.fetchObject()
+        notes = CoreDataHandler.fetchNotes()
     }
 }
     

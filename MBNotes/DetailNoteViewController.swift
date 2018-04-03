@@ -20,7 +20,7 @@ class DetailNoteViewController: UIViewController {
         super.viewDidLoad()
         
         dateform.dateStyle = .medium // date
-        //print("DATE: \(dateform.string(from: date1 as Date))") // date
+        //print("DATE: \(dateform.string(from: currentDate as Date))") // date
         
         noteNameLblDN.text = noteToDetail?.name
         textNoteDN.text = noteToDetail?.text
@@ -37,12 +37,12 @@ class DetailNoteViewController: UIViewController {
     @IBAction func saveChangeBtnDN(_ sender: UIButton) {//save btn
         
         //это вроде сохраняет
-        note![indexForChangeNote].setValue(noteNameLblDN.text, forKey: "name")
-        note![indexForChangeNote].setValue(textNoteDN.text, forKey: "text")
-        note![indexForChangeNote].setValue(date1 as Date, forKey: "editingDate")
+        notes![indexForChangeNote].setValue(noteNameLblDN.text, forKey: "name")
+        notes![indexForChangeNote].setValue(textNoteDN.text, forKey: "text")
+        notes![indexForChangeNote].setValue(currentDate as Date, forKey: "editingDate")
         
         do {
-            try note![indexForChangeNote].managedObjectContext?.save()
+            try notes![indexForChangeNote].managedObjectContext?.save()
             } catch {
                 print(error)
             }

@@ -9,12 +9,12 @@
 import UIKit
 import Foundation
 
-var note:[Note]? = nil
+var notes:[Note]? = nil
 
 var noteToDetail: Note? = nil
 var indexForChangeNote = 0
 
-let date1 = NSDate() //date
+let currentDate = NSDate() //date
 let dateform = DateFormatter()// date
 
 

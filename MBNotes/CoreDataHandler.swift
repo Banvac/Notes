@@ -35,7 +35,7 @@ class CoreDataHandler: NSObject {
         }
     }
     
-    class func fetchObject() -> [Note]? {
+    class func fetchNotes() -> [Note]? {
         let context = getContext()
         var note:[Note]? = nil
         

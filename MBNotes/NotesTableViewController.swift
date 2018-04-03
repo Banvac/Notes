@@ -21,9 +21,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         
         dateform.dateStyle = .medium // date
-        print("DATE: \(dateform.string(from: date1 as Date))") // date
+        print("DATE: \(dateform.string(from: currentDate as Date))") // date
         
-        note = CoreDataHandler.fetchObject()
+        notes = CoreDataHandler.fetchNotes()
     } // DID LOAD
     
     //tableView//
@@ -38,15 +38,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return note!.count
+        return notes!.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! NoteTableViewCell
         
-        cell.noteNameLbl.text! = note![indexPath.row].name!
-        cell.noteCreateDateLbl.text! = dateform.string(from: date1 as Date) //String(describing: note![indexPath.row].creatingDate!)
+        cell.noteNameLbl.text! = notes![indexPath.row].name!
+        cell.noteCreateDateLbl.text! = dateform.string(from: currentDate as Date)
         cell.viewCell.layer.cornerRadius = cell.viewCell.frame.height / 2
         
         return cell
@@ -60,14 +60,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //to note detail
         indexForChangeNote = indexPath.row
-        noteToDetail = note![indexPath.row]
+        noteToDetail = notes![indexPath.row]
         performSegue(withIdentifier: "toNoteDetail", sender: self)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            if CoreDataHandler.deleteObject(note: note![indexPath.row]) { // удалить 1 объект
-             note = CoreDataHandler.fetchObject()
+            if CoreDataHandler.deleteObject(note: notes![indexPath.row]) { // удалить 1 объект
+             notes = CoreDataHandler.fetchNotes()
             tableView.reloadData()
             }
         }
@@ -76,8 +76,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func delAllBtn(_ sender: UIButton) {
         if CoreDataHandler.cleanDelete() {
-            note = CoreDataHandler.fetchObject()
-            print(note!.count)
+            notes = CoreDataHandler.fetchNotes()
+            print(notes!.count)
             tableView.reloadData()
         }
     }
