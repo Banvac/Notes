@@ -15,6 +15,10 @@ class DetailNoteViewController: UIViewController {
     @IBOutlet weak var creationDateLblDN: UILabel!
     @IBOutlet weak var editingDateLblDN: UILabel!
     
+    var currentNote: Note?
+    //var onSaveAction: ((Note) -> Void)?
+    
+    let dateform = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +26,10 @@ class DetailNoteViewController: UIViewController {
         dateform.dateStyle = .medium // date
         //print("DATE: \(dateform.string(from: currentDate as Date))") // date
         
-        noteNameLblDN.text = noteToDetail?.name
-        textNoteDN.text = noteToDetail?.text
-        creationDateLblDN.text = dateform.string(from: (noteToDetail?.creatingDate)!)
-        editingDateLblDN.text = dateform.string(from: (noteToDetail?.editingDate)!)
-        
+        noteNameLblDN.text = currentNote?.name
+        textNoteDN.text = currentNote?.text
+        creationDateLblDN.text = dateform.string(from: (currentNote?.creatingDate)!)
+        editingDateLblDN.text = dateform.string(from: (currentNote?.editingDate)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,17 +40,23 @@ class DetailNoteViewController: UIViewController {
     @IBAction func saveChangeBtnDN(_ sender: UIButton) {//save btn
         
         //это вроде сохраняет
-        notes![indexForChangeNote].setValue(noteNameLblDN.text, forKey: "name")
-        notes![indexForChangeNote].setValue(textNoteDN.text, forKey: "text")
-        notes![indexForChangeNote].setValue(currentDate as Date, forKey: "editingDate")
+        currentNote?.setValue(noteNameLblDN.text, forKey: "name")
+        currentNote?.setValue(textNoteDN.text, forKey: "text")
+        currentNote?.setValue(NSDate() as Date, forKey: "editingDate")
         
         do {
-            try notes![indexForChangeNote].managedObjectContext?.save()
+            try currentNote?.managedObjectContext?.save()
             } catch {
                 print(error)
             }
+        
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func closeBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 
     /*
